@@ -5,12 +5,14 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
 @Configuration
+@PropertySource("application.properties")
 public class ConfigClass {
 
 
@@ -109,5 +111,6 @@ public class ConfigClass {
     public Ordine ordine1 (@Qualifier("tavolo1") Tavolo tavolo1,@Value("${coperto.costo}") double costoCoperto){
         return new Ordine(StatoOrdine.INCORSO,4,tavolo1,costoCoperto);
     }
+
 
 }
