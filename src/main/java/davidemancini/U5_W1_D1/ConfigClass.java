@@ -1,12 +1,10 @@
 package davidemancini.U5_W1_D1;
 
-import davidemancini.U5_W1_D1.entities.Drinks;
-import davidemancini.U5_W1_D1.entities.MenuDaStampare;
-import davidemancini.U5_W1_D1.entities.Pizze;
-import davidemancini.U5_W1_D1.entities.Toppings;
+import davidemancini.U5_W1_D1.entities.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -93,5 +91,9 @@ public class ConfigClass {
         drinksList.add(wine);
         drinksList.add(water);
         return new MenuDaStampare(pizzeList,toppingsList,drinksList);
+    }
+    @Bean
+    public Ordine nuovoOrdine(Tavolo tavolo){
+        return new Ordine(1,StatoOrdine.PRONTO,4, LocalTime.now(),,tavolo);
     }
 }
