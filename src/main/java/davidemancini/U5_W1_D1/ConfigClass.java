@@ -1,6 +1,8 @@
 package davidemancini.U5_W1_D1;
 
 import davidemancini.U5_W1_D1.entities.*;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -92,8 +94,20 @@ public class ConfigClass {
         drinksList.add(water);
         return new MenuDaStampare(pizzeList,toppingsList,drinksList);
     }
+    @Value("${coperto.costo}")
+   private double costoCoperto;
+
     @Bean
-    public Ordine nuovoOrdine(Tavolo tavolo){
-        return new Ordine(1,StatoOrdine.PRONTO,4, LocalTime.now(),,tavolo);
+    public double getCostoCoperto(){
+        return costoCoperto;
     }
+    @Bean
+    public Tavolo tavolo1 (){
+        return new Tavolo(1,4,StatoTavolo.OCCUPATO);
+    }
+    @Bean
+    public Ordine ordine1 (@Qualifier("tavolo1") Tavolo tavolo1,@Value("${coperto.costo}") double costoCoperto){
+        return new Ordine(StatoOrdine.INCORSO,4,tavolo1,costoCoperto);
+    }
+
 }
