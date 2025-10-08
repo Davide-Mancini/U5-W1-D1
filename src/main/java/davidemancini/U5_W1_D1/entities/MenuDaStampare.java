@@ -13,6 +13,30 @@ public class MenuDaStampare {
         this.drinksList = drinksList;
     }
 
+    public List<Pizze> getPizzeList() {
+        return pizzeList;
+    }
+
+    public void setPizzeList(List<Pizze> pizzeList) {
+        this.pizzeList = pizzeList;
+    }
+
+    public List<Drinks> getDrinksList() {
+        return drinksList;
+    }
+
+    public void setDrinksList(List<Drinks> drinksList) {
+        this.drinksList = drinksList;
+    }
+
+    public List<Toppings> getToppingsList() {
+        return toppingsList;
+    }
+
+    public void setToppingsList(List<Toppings> toppingsList) {
+        this.toppingsList = toppingsList;
+    }
+
     @Override
     public String toString() {
         return "\n" +

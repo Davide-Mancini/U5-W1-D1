@@ -109,7 +109,7 @@ public class ConfigClass {
     }
     @Bean
     public Ordine ordine1 (@Qualifier("tavolo1") Tavolo tavolo1,@Value("${coperto.costo}") double costoCoperto){
-        return new Ordine(StatoOrdine.INCORSO,4,tavolo1,costoCoperto);
+        return new Ordine(List.of(),StatoOrdine.INCORSO,4,tavolo1,costoCoperto);
     }
 
 

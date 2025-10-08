@@ -1,35 +1,53 @@
 package davidemancini.U5_W1_D1.entities;
 
 public class ProdottoMenu {
-    private String nome;
-    private  double prezzo;
+    private Pizze pizza;
+    private Drinks drink;
+    private Toppings toppings;
 
-    public ProdottoMenu(double prezzo, String nome) {
-        this.prezzo = prezzo;
-        this.nome = nome;
+
+    public ProdottoMenu(Pizze pizza) {
+        this.pizza = pizza;
     }
 
-    public String getNome() {
-        return nome;
+    public ProdottoMenu(Drinks drink) {
+        this.drink = drink;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public ProdottoMenu(Toppings toppings) {
+        this.toppings = toppings;
     }
 
-    public double getPrezzo() {
-        return prezzo;
+    public Pizze getPizza() {
+        return pizza;
     }
 
-    public void setPrezzo(double prezzo) {
-        this.prezzo = prezzo;
+    public void setPizza(Pizze pizza) {
+        this.pizza = pizza;
+    }
+
+    public Toppings getToppings() {
+        return toppings;
+    }
+
+    public void setToppings(Toppings toppings) {
+        this.toppings = toppings;
+    }
+
+    public Drinks getDrink() {
+        return drink;
+    }
+
+    public void setDrink(Drinks drink) {
+        this.drink = drink;
     }
 
     @Override
     public String toString() {
         return "ProdottoMenu{" +
-                "nome='" + nome + '\'' +
-                ", prezzo=" + prezzo +
+                "pizza=" + pizza +
+                ", drink=" + drink +
+                ", toppings=" + toppings +
                 '}';
     }
 }
